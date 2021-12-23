@@ -16,13 +16,12 @@ function App() {
     //state
     const [songs, setSongs] = useState(data);
     const [currentSong, setCurrentSong] = useState(songs[0]);
-
-    console.log('songs', songs);
+    const [isPlaying, setIsPlaying] = useState(false);
 
     return (
         <div className="App">
             <Song currentSong={currentSong}/>
-            <Player/>
+            <Player currentSong={currentSong} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
 
             <div className="credit">
                 <a href="https://chillhop.ffm.to/creatorcred" title="Music provided by ChillHop" target="_blank">
