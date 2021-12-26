@@ -7,6 +7,10 @@
   background: #fff;
   box-shadow: 2px 2px 50px rgb(204, 204, 204);
   overflow-y: scroll;
+  transform: translateX(-100%);
+  transition: all .5s ease;
+  opacity: 0;
+  visibility: hidden;
 
   h2 {
     padding: 2rem;
@@ -60,3 +64,13 @@
   border: transparent;
 }
 //endregion
+
+.selected {
+  background: #a9c3e8;
+}
+
+.active-library {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}

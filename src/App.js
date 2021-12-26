@@ -7,6 +7,7 @@ import Player from "./components/Player";
 import Song from "./components/Song";
 import Library from "./components/Library";
 import Credit from "./components/Credit";
+import Nav from "./components/Nav";
 
 //data
 import data from "./util";
@@ -23,6 +24,7 @@ function App() {
         currentTime: 0,
         duration: 0,
     });
+    const [libraryStatus, setLibraryStatus] = useState(false);
 
     //handlers
     const timeUpdateHandler = (e) => {
@@ -34,10 +36,37 @@ function App() {
 
     return (
         <div className="App">
-            <Song currentSong={currentSong}/>
-            <Player setSongInfo={setSongInfo} songInfo={songInfo} audioRef={audioRef} currentSong={currentSong} isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>
-            <Library isPlaying={isPlaying} audioRef={audioRef} songs={songs} setCurrentSong={setCurrentSong}/>
-            <audio onLoadedMetadata={timeUpdateHandler} onTimeUpdate={timeUpdateHandler} ref={audioRef} src={currentSong.audio}/>
+            <Nav
+                libraryStatus={libraryStatus}
+                setLibraryStatus={setLibraryStatus}
+            />
+            <Song
+                currentSong={currentSong}
+            />
+            <Player
+                setSongInfo={setSongInfo}
+                songInfo={songInfo}
+                audioRef={audioRef}
+                currentSong={currentSong}
+                isPlaying={isPlaying}
+                setIsPlaying={setIsPlaying}
+                songs={songs}
+                setCurrentSong={setCurrentSong}
+            />
+            <Library
+                isPlaying={isPlaying}
+                audioRef={audioRef}
+                songs={songs}
+                setCurrentSong={setCurrentSong}
+                setSongs={setSongs}
+                libraryStatus={libraryStatus}
+            />
+            <audio
+                onLoadedMetadata={timeUpdateHandler}
+                onTimeUpdate={timeUpdateHandler}
+                ref={audioRef}
+                src={currentSong.audio}
+            />
             <Credit/>
         </div>
     );
