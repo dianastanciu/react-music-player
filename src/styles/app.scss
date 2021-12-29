@@ -22,3 +22,15 @@ h3, h4 {
   font-weight: 400;
   color: rgb(100, 100, 100);
 }
+
+.App {
+  @media (min-width: 768px) {
+    transition: all .5s ease;
+  }
+}
+
+.library-active {
+  @media (min-width: 768px) {
+    margin-left: 30%;
+  }
+}
