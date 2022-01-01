@@ -1,5 +1,6 @@
 {
   "name": "music-player",
+  "homepage": "https://project-react-music-app.dianastanciu.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
