@@ -21,8 +21,6 @@ const Player = ({setCurrentSong, songs, songInfo, setSongInfo, audioRef, current
         });
 
         setSongs(newSongs);
-
-        console.log('former use effect');
     };
 
     const playSongHandler = () => {
