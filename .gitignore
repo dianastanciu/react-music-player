@@ -25,4 +25,4 @@ yarn-error.log*
 /.idea/watcherTasks.xml
 /.idea/inspectionProfiles/Project_Default.xml
 
-./public/.htaccess
+/public/.htaccess
